@@ -14,7 +14,7 @@ function fn<T>(a:T): T{
 let result=fn(10);// 不指定泛型，TS可以自动对类型进行推断
 let result2=fn<string>('hello')// 指定泛型
 
-// 可以指定多个泛型
+// 可以同时指定多个泛型
 function fn2<T,K>(a:T,b:K):T {
     console.log(b);
     return a;
@@ -26,6 +26,16 @@ interface Inter{
     length:number;
 }
 
-function fn3<T>(){
-    
+// T extends Inter 表示泛型T必须是Inter的实现类（子类）
+function fn3<T extends Inter>(a:T):number{
+    return a.length;
 }
+fn3('123')
+
+class myClass<T>{
+    name:T;
+    constructor(name:T){
+        this.name=name
+    }
+}
+const mc=new myClass<string>('孙悟空');
