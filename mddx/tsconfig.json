@@ -1,0 +1,19 @@
+{
+  "include": [
+    "./src/*"
+  ],
+  "compilerOptions": {
+    // target 指定TS被编译时使用的某个ES规范版本
+    "target": "es2015",
+    // module 指定使用的模块规范
+    "module": "es2015",
+    // 指定编译后创建的js文件位置
+    "outDir": "./js",
+    // 开启ts严格模式
+    "strict": true,
+    // 有错误代码时不进行编译
+    "noEmitOnError": true,
+    // outFile 将编译后的文件合并为一个文件
+    // "outFile": "./js/dch.js",
+    }
+}
