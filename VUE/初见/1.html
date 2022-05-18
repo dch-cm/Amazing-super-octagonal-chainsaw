@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+
+<!-- 
+    1.要让Vue工作，需要创建一个Vue实例，且要传入一个配置对象
+    2.容器里的代码依然符合html规范，只是混入了一些Vue语法
+    3.容器里的代码被称为 Vue 模板
+    4.Vue实例和容器是一一对应的
+    5.{{xxx}}中的 xxx 要写js表达式，且xxx可以自动读取到data中的所有属性
+    6.真实开发中只有一个Vue实例，且会配合这组件一起使用
+    7.一旦data中的数据发生改变，那么页面中用到该数据的位置也会更新
+
+ -->
+
+</head>
+<body>
+    <!-- 容器 -->
+    <div id="root">
+        <!-- toUpperCase() 可以使字母转化为大写 -->
+        <h1>Hello，{{name}}，{{address.toUpperCase()}}</h1>
+        
+        
+    </div>
+
+</body>
+</html>
+
+<script>
+    Vue.config.productionTip=false // 设置为 false 以阻止 vue 在启动时生成生产提示。
+    
+    // 创建vue实例
+    new Vue({
+        el:'#root', // el用于指定当前vue实例为哪个容器服务，值一般为css选择器字符串
+        data:{// data用于储存数据，数据供el所指定的容器去使用
+            name:'卢鹏宇',
+            address:'lpy'
+        }
+    })
+
+
+</script>
+
